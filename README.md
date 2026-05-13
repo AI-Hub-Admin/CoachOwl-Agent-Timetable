@@ -159,6 +159,12 @@ The competitor launch analysis report has been successfully compiled and emailed
 Human Check-in: Lunch Mac Donald Big Mac, Milk Shake and Ice Cream
 Agent: 1080 kcal and reports:
 
+**Upload Images**   
+
+<img src="assets/fitness_agent_image_calculate_calories.png" alt="fitness_agent_image_calculate_calories" style="max-width: 400px; height: auto;" />
+
+**Checkin Text**   
+
 <img src="assets/fitness_agent_calories_analysis.png" alt="fitness_agent_calories_analysis" style="max-width: 400px; height: auto;" />
 
 #### Career Coach
