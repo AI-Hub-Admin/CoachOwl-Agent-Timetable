@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoachOwl - AI Agent Human Goal Execution Timetable at AI Agent A2Z</title>
+    <meta name="description" content="CoachOwl is an AI Agent–powered goal execution and online timetable where you and your intelligent agents (Claude/Codex/Gemini) work together to plan, schedule, and achieve goal real results.">
+    <meta name="keywords" content="coachowl,ai agent,goal execution,timetable">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #1A2E44;
+            --orange: #FF6B00;
+            --light-bg: #F8FAFC;
+            --white: #FFFFFF;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--light-bg); color: var(--text-dark); line-height: 1.6; }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: white;
+            border-bottom: 1px solid #eee;
+            font-family: Arial, sans-serif;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        /* Icon Styling */
+        .icon_website_header {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+            border-radius: 8px; /* Slight rounding for a modern look */
+            background: transparent;
+        }
+
+        /* Text Logo Styling */
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .logo-text {
+            margin-left: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .logo-text .coach {
+            color: #1A2E44;
+        }
+
+        .logo-text .owl {
+            color: #FF6B00;
+        }
+
+        /* Center nav */
+        .nav-center {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-center a {
+            text-decoration: none;
+            color: #333;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .nav-center a:hover {
+            color: #FF6B00;
+        }
+
+        /* Right nav */
+        .nav-right {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-right a {
+            text-decoration: none;
+            color: #555;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .nav-right a:hover {
+            color: #FF6B00;
+        }
+
+        .logo-container { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo-text { font-weight: 800; font-size: 1.5rem; }
+        .logo-text .coach { color: var(--navy); }
+        .logo-text .owl { color: var(--orange); }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 10% 60px;
+            text-align: center;
+            background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%);
+        }
+
+        .hero h1 { font-size: 3rem; color: var(--navy); margin-bottom: 20px; line-height: 1.2; }
+        .hero p { font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 30px; }
+        .btn-primary {
+            background: var(--orange);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3); }
+
+        /* Prompt Cases Section */
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 40px 10%;
+        }
+
+        .case-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 5px solid var(--orange);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+        .case-card h3 { color: var(--navy); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .prompt-box {
+            background: #F1F5F9;
+            padding: 12px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: #475569;
+        }
+        /* Task Container Styling */
+        .human-task, .agent-task {
+            display: flex;
+            align-items: center;
+            margin-top: 12px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Human Task: Slate/Grounded Style */
+        .human-task {
+            background-color: #f1f5f9;
+            color: #1e293b;
+            border: 1px solid #e2e8f0;
+        }
+
+        .span-human-task {
+            background: #1e293b;
+            color: #ffffff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-right: 12px;
+        }
+
+        /* Agent Task: Blue/Digital Style */
+        .agent-task {
+            background-color: #eff6ff;
+            color: #1d4ed8;
+            border: 1px solid #dbeafe;
+        }
+
+        .span-agent-task {
+            background: rgb(255, 107, 0);
+            color: #ffffff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-right: 12px;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.2); /* Soft glow for AI */
+        }
+        /* Collaboration Features */
+        .features { padding: 60px 10%; background: var(--navy); color: white; }
+        .features-header { text-align: center; margin-bottom: 50px; }
+        .feat-split { display: flex; gap: 40px; flex-wrap: wrap; }
+        .feat-box { flex: 1; min-width: 300px; background: rgba(255,255,255,0.05); padding: 30px; border-radius: 12px; }
+        .feat-box h4 { color: var(--orange); margin-bottom: 15px; }
+        .feat-box ul { list-style: none; }
+        .feat-box li { margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px; }
+        .feat-box li::before { content: "✓"; color: var(--orange); font-weight: bold; }
+
+        /* Footer */
+        footer { text-align: center; padding: 40px; color: var(--text-muted); font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .feat-split { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="#" class="logo-container">
+                <img src="/assets/icon_coachowl.png" class="icon_website_header">
+                <div class="logo-text">
+                    <span class="coach">Coach</span><span class="owl">Owl</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="nav-right">
+            <a href="https://www.deepnlp.org/doc/onekey_gateway" target="_blank">Docs</a>
+            <a href="https://www.deepnlp.org/account/login" target="_blank">Login</a>
+            <a href="https://www.deepnlp.org/workspace/keys" target="_blank">API Keys</a>
+            <a href="https://coachowl.aiagenta2z.com" target="_blank">Open CoachOwl</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Humans and AI Agents<br><span style="color:var(--orange)">Collaborative Timetable</span></h1>
+        <p>Set Goal → CoachOwl Plans → Human & Agent Execute. Let AI Agents automate the tedious work while you focus on growth.</p>
+        <a href="/" class="btn-primary">Start Your First Goal</a>
+    </header>
+
+    <section class="cases-grid">
+        <div class="case-card">
+            <h3>🎓 Learning</h3>
+            <p>Master complex certifications with a split schedule.</p>
+            <div class="prompt-box">"Plan for CFA Level II exam in 6 months. "</div>
+            <div class="human-task"><span class="span-human-task">Human</span>Follow Exam & Certificate Preparation</div>
+            <div class="agent-task"><span class="span-agent-task">Agent</span>Deep research exam by chapters, Send Generated Exam Questions & Formula cheatsheets to Emails</div>
+
+        </div>
+        <div class="case-card">
+            <h3>⚖️ Fitness</h3>
+            <p>Balanced execution between tracking and sweating.</p>
+            <div class="prompt-box">"I want to lose 5kg in 7 weeks. "</div>
+            <div class="human-task"><span class="span-human-task">Human</span>Follow workout and check-in.</div>
+            <div class="agent-task"><span class="span-agent-task">Agent</span>Track & Analyze Calories & Nutrition from pictures and text, Make Health Plan/Workout Plan/Diet Suggestions</div>
+        </div>
+        <div class="case-card">
+            <h3>💼 Career</h3>
+            <p>Accelerate your professional trajectory.</p>
+            <div class="prompt-box">"Got Promotion to Manager role in 6 months. AI analyzes leadership gaps, I attend the workshops."</div>
+            <div class="human-task"><span class="span-human-task">Human</span>Social Networking, 1/1 Coffee Chat, Industry Meeting</div>
+            <div class="agent-task"><span class="span-agent-task">Agent</span>Search Linkedin and more industry reports, generate schedules,help you plan and practice</div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="features-header">
+            <h2>Human + Agent Co-Execution</h2>
+            <p>Unlike a static timetable, CoachOwl is a living sequence of actions of Human and AI Agent Execution and Collaboration.</p>
+        </div>
+
+        <div class="feat-split">
+            <div class="feat-box">
+                <h4>You (The Human)</h4>
+                <ul>
+                    <li>Set your objective</li>
+                    <li>Learn, practice, and take physical action</li>
+                    <li>Daily check-ins and progress feedback</li>
+                    <li>Final decision making on plan adjustments</li>
+                </ul>
+            </div>
+            <div class="feat-box">
+                <h4>AI Agents (Claude/Gemini/Codex/OpenClaw and more)</h4>
+                <ul>
+                    <li>Handle repetitive job searches & data analysis & personal agents(claude/codex/gemini/openclaw and more) and skills</li>
+                    <li>Send smart reminders and automate emails</li>
+                    <li>Continuously optimize the execution timeline</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 60px 10%; text-align: center;">
+        <h2 style="margin-bottom: 20px;">Connect Your Local Agents</h2>
+        <p style="color: var(--text-muted); margin-bottom: 30px;">Sync with Claude Code, OpenClaw, or Codex via our secure onekey Gateway. Pull Tasks and Execution and use the timetable to notify results.</p>
+        <code style="background: #e2e8f0; padding: 10px 20px; border-radius: 5px;">npx onekey gateway coachowl/coachowl --foreground</code>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 CoachOwl at https://www.aiagenta2z.com . Empowering human potential through agentic orchestration.</p>
+    </footer>
+
+</body>
+</html>

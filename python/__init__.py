@@ -1,0 +1,4 @@
+"""
+CoachOwl python package root.
+"""
+

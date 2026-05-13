@@ -1,0 +1,8 @@
+*.DS_store
+release
+.idea/
+__pycache__/
+exclude_list.txt
+test
+db/project.sqlite
+

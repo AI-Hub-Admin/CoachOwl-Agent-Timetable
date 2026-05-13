@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Product Hunt AI Agent Releases — May 2026 Research Report</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f5f7fb;
+            color: #1f2937;
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #111827 0%, #1e3a8a 100%);
+            color: white;
+            padding: 56px;
+            border-radius: 28px;
+            margin-bottom: 32px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+        }
+
+        .hero h1 {
+            margin: 0 0 18px 0;
+            font-size: 42px;
+            line-height: 1.15;
+        }
+
+        .hero p {
+            margin: 0;
+            color: rgba(255,255,255,0.88);
+            font-size: 18px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 32px;
+            margin-bottom: 28px;
+            box-shadow: 0 4px 18px rgba(15,23,42,0.06);
+            border: 1px solid #e5e7eb;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 18px;
+            font-size: 28px;
+            color: #111827;
+        }
+
+        h3 {
+            margin-top: 28px;
+            margin-bottom: 12px;
+            font-size: 22px;
+            color: #1e3a8a;
+        }
+
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            padding: 6px 12px;
+            background: #eef2ff;
+            color: #3730a3;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .launch {
+            border-left: 4px solid #2563eb;
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        .launch p {
+            margin-top: 10px;
+        }
+
+        .highlight {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            padding: 18px;
+            border-radius: 16px;
+            margin-top: 14px;
+        }
+
+        ul {
+            padding-left: 22px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        th {
+            background: #111827;
+            color: white;
+            text-align: left;
+            padding: 14px;
+            font-size: 14px;
+        }
+
+        td {
+            padding: 14px;
+            border-bottom: 1px solid #e5e7eb;
+            background: white;
+            vertical-align: top;
+        }
+
+        .footer {
+            margin-top: 42px;
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        .quote {
+            background: #f9fafb;
+            border-left: 4px solid #6366f1;
+            padding: 16px 18px;
+            border-radius: 12px;
+            margin-top: 18px;
+            color: #374151;
+        }
+
+        .trend-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .trend-box {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 18px;
+            padding: 18px;
+        }
+
+        .trend-box h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 32px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .card {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <section class="hero">
+        <h1>Product Hunt AI Agent Releases — May 2026</h1>
+        <p>
+            Research report analyzing emerging AI agent launches, infrastructure trends,
+            developer tooling, and operational platforms highlighted across Product Hunt
+            and related AI startup ecosystems during May 2026.
+        </p>
+    </section>
+
+    <section class="card">
+        <h2>Executive Summary</h2>
+
+        <div class="meta">
+            <span class="tag">AI Agents</span>
+            <span class="tag">Product Hunt</span>
+            <span class="tag">Developer Tools</span>
+            <span class="tag">Multi-Agent Systems</span>
+            <span class="tag">Infrastructure</span>
+        </div>
+
+        <p>
+            May 2026 marked a significant transition in the AI agent ecosystem.
+            Product Hunt launches increasingly shifted away from simple chatbot wrappers
+            toward production-grade agent infrastructure, orchestration systems,
+            observability tooling, and autonomous workflow execution.
+        </p>
+
+        <p>
+            Community discussions and launch analysis showed that developers and startups
+            are now focusing on the second-order challenges of agent systems:
+            reliability, governance, execution environments, collaboration,
+            and operational trust.
+        </p>
+
+        <div class="highlight">
+            <strong>Core market transition:</strong>
+            The ecosystem moved from “AI assistants” toward “AI operational systems.”
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Major Trends Observed</h2>
+
+        <div class="trend-grid">
+
+            <div class="trend-box">
+                <h4>Agent Infrastructure</h4>
+                <p>
+                    Dedicated runtimes, virtual machines, orchestration layers,
+                    and execution platforms became one of the fastest growing categories.
+                </p>
+            </div>
+
+            <div class="trend-box">
+                <h4>Multi-Agent Collaboration</h4>
+                <p>
+                    Products increasingly focused on teams of agents coordinating
+                    work instead of isolated single-agent experiences.
+                </p>
+            </div>
+
+            <div class="trend-box">
+                <h4>Observability & Safety</h4>
+                <p>
+                    Monitoring, evaluation, debugging, and governance tools emerged
+                    as critical infrastructure for production adoption.
+                </p>
+            </div>
+
+            <div class="trend-box">
+                <h4>Developer-Centric Workflows</h4>
+                <p>
+                    Many launches targeted engineering teams with coding agents,
+                    review agents, CI/CD automation, and infrastructure tooling.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Key AI Agent Related Releases</h2>
+
+        <div class="launch">
+            <h3>Huddle01 VMs</h3>
+
+            <div class="meta">
+                <span class="tag">Agent Infrastructure</span>
+                <span class="tag">Virtual Machines</span>
+            </div>
+
+            <p>
+                Huddle01 VMs introduced dedicated virtual machines designed specifically
+                for AI agents. The launch reflected the growing demand for isolated,
+                persistent execution environments optimized for autonomous systems.
+            </p>
+
+            <p>
+                Community reactions highlighted how agent-native infrastructure is rapidly
+                becoming an independent product category instead of merely extending
+                traditional cloud computing platforms.
+            </p>
+
+            <div class="quote">
+                “Virtual machines built for AI agents.” — Product Hunt community summary
+            </div>
+        </div>
+
+        <div class="launch">
+            <h3>PandaProbe</h3>
+
+            <div class="meta">
+                <span class="tag">Agent Engineering</span>
+                <span class="tag">Open Source</span>
+            </div>
+
+            <p>
+                PandaProbe focused on open-source agent engineering and evaluation.
+                It addressed the growing need for testing harnesses, regression systems,
+                and workflow validation in increasingly complex multi-agent environments.
+            </p>
+
+            <p>
+                Discussions around PandaProbe emphasized that debugging agent interactions
+                is becoming one of the most important operational problems in the industry.
+            </p>
+        </div>
+
+        <div class="launch">
+            <h3>Rosentic</h3>
+
+            <div class="meta">
+                <span class="tag">AI Coding Agents</span>
+                <span class="tag">Merge Safety</span>
+            </div>
+
+            <p>
+                Rosentic focused on detecting issues created when multiple coding agents
+                interact with one another before merge or deployment.
+            </p>
+
+            <p>
+                The launch highlighted a growing industry concern:
+                autonomous coding systems increasingly create coordination failures
+                that require specialized monitoring and validation layers.
+            </p>
+        </div>
+
+        <div class="launch">
+            <h3>Mindra</h3>
+
+            <div class="meta">
+                <span class="tag">Delegation Agents</span>
+                <span class="tag">AI Teams</span>
+            </div>
+
+            <p>
+                Mindra positioned itself as a platform for delegating work to teams
+                of AI agents rather than individual assistants.
+            </p>
+
+            <p>
+                This reflected a broader trend toward role-based AI systems that emulate
+                organizational workflows and collaborative task execution.
+            </p>
+        </div>
+
+        <div class="launch">
+            <h3>Kilo Code v7</h3>
+
+            <div class="meta">
+                <span class="tag">Developer Agents</span>
+                <span class="tag">VS Code</span>
+            </div>
+
+            <p>
+                Kilo Code v7 integrated parallel coding agents, diff review systems,
+                and multi-model comparisons directly inside developer workflows.
+            </p>
+
+            <p>
+                The release demonstrated how AI agents are increasingly becoming
+                embedded directly inside professional tooling instead of operating
+                as standalone web applications.
+            </p>
+        </div>
+
+    </section>
+
+    <section class="card">
+        <h2>Industry Analysis</h2>
+
+        <p>
+            Several broader ecosystem shifts became visible during May 2026:
+        </p>
+
+        <ul>
+            <li>
+                AI agent products increasingly emphasized orchestration instead of generation.
+            </li>
+
+            <li>
+                Infrastructure and governance products attracted strong Product Hunt traction.
+            </li>
+
+            <li>
+                Open-source agent ecosystems accelerated rapidly.
+            </li>
+
+            <li>
+                Enterprise AI adoption shifted toward operational automation.
+            </li>
+
+            <li>
+                Multi-agent coordination emerged as a major engineering challenge.
+            </li>
+
+            <li>
+                Observability became essential for production trust.
+            </li>
+        </ul>
+
+        <div class="highlight">
+            The strongest Product Hunt launches were not consumer-facing chatbot apps.
+            Instead, they were operational systems enabling developers and companies
+            to deploy reliable AI workflows at scale.
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>AI Agent Market Positioning Matrix</h2>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Primary Category</th>
+                        <th>Target Users</th>
+                        <th>Key Differentiator</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Huddle01 VMs</td>
+                        <td>Infrastructure</td>
+                        <td>Developers</td>
+                        <td>Agent-native compute environments</td>
+                    </tr>
+
+                    <tr>
+                        <td>PandaProbe</td>
+                        <td>Testing & Evaluation</td>
+                        <td>Engineering Teams</td>
+                        <td>Open-source agent engineering workflows</td>
+                    </tr>
+
+                    <tr>
+                        <td>Rosentic</td>
+                        <td>Observability</td>
+                        <td>AI DevOps Teams</td>
+                        <td>Agent conflict detection before merge</td>
+                    </tr>
+
+                    <tr>
+                        <td>Mindra</td>
+                        <td>Workflow Delegation</td>
+                        <td>Business Teams</td>
+                        <td>AI role delegation and collaboration</td>
+                    </tr>
+
+                    <tr>
+                        <td>Kilo Code v7</td>
+                        <td>Developer Productivity</td>
+                        <td>Software Engineers</td>
+                        <td>Parallel coding agents inside VS Code</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Strategic Outlook</h2>
+
+        <p>
+            The May 2026 Product Hunt ecosystem suggests that the AI agent market
+            is entering an operational maturity phase.
+        </p>
+
+        <p>
+            Future growth will likely concentrate around:
+        </p>
+
+        <ul>
+            <li>Agent reliability and governance</li>
+            <li>Persistent execution environments</li>
+            <li>Cross-agent orchestration</li>
+            <li>Enterprise workflow automation</li>
+            <li>Local-first autonomous systems</li>
+            <li>AI-native developer infrastructure</li>
+        </ul>
+
+        <p>
+            Rather than competing purely on model intelligence,
+            future winners may increasingly compete on infrastructure quality,
+            workflow integration, and operational trust.
+        </p>
+    </section>
+
+    <section class="card">
+        <h2>Sources & Research References</h2>
+
+        <ul>
+            <li>
+                Product Hunt AI Agents Directory —
+                <a href="https://www.producthunt.com/categories/ai-agents?order=recent_launches">
+                    producthunt.com
+                </a>
+            </li>
+
+            <li>
+                Product Hunt Digest Analysis —
+                <a href="https://news.cheng.st/2026/05/04/product-hunt-digest-2026-05-03/">
+                    news.cheng.st
+                </a>
+            </li>
+
+            <li>
+                Product Hunt Community Discussions —
+                <a href="https://www.reddit.com/r/ProductHuntLaunches/">
+                    reddit.com/r/ProductHuntLaunches
+                </a>
+            </li>
+
+            <li>
+                Product Hunt AI Newsletter —
+                <a href="https://deeperlearning.producthunt.com/">
+                    deeperlearning.producthunt.com
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <div class="footer">
+        Research Report Generated — May 2026<br/>
+        Focus Area: Product Hunt AI Agent Ecosystem, Infrastructure, and Developer Tooling
+    </div>
+
+</div>
+
+</body>
+</html>
